@@ -1,11 +1,12 @@
 class AImages {
   // App logos
-  static const String darkAppLogo = 'assets/logos/';
-  static const String lightAppLogo = 'assets/logos/';
+  static const String darkAppLogo = 'assets/logos/A logo dark.png';
+  static const String lightAppLogo = 'assets/logos/A logo white 2.png';
 
   // Social logos
-  static const String google = 'assets/logos/';
-  static const String facbook = 'assets/logos/';
+  static const String google =
+      'assets/logos/google-logo-icon-png-transparent-background-osteopathy-16.png';
+  static const String facebook = 'assets/logos/Facebook_Logo_2023.png';
 
   // onboarding images
   static const String onBoardingImage1 =

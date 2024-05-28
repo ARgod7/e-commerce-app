@@ -1,3 +1,4 @@
+import 'package:ecomapp/features/auth/screens/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +17,7 @@ class OnboardingController extends GetxController {
   /// Update current index and jump to next page
   void nextPage() {
     if (currentPageIndex.value == 2) {
-      // Get.to(LoginScreen());
+      Get.to(const LoginScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);
@@ -25,7 +26,6 @@ class OnboardingController extends GetxController {
 
   /// Update current index and jump to last page
   void skipPage() {
-    currentPageIndex.value = 2;
-    pageController.jumpTo(2);
+    Get.to(const LoginScreen());
   }
 }
