@@ -16,7 +16,8 @@ class AImages {
   static const String onBoardingImage3 =
       'assets/images/onBoarding/girl walking.gif';
 
-  static const String verifyEmail = 'assets/images/verification/email-sent.gif';
+  static const String verifyEmail = 'assets/images/onBoarding/email verify.gif';
+
   static const String verifiedEmail =
-      'assets/images/verification/email-verified.gif';
+      'assets/images/onBoarding/email verified.gif';
 }
