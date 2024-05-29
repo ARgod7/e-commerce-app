@@ -1,7 +1,9 @@
+import 'package:ecomapp/features/auth/screens/signup%20create%20acc/verify_email.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
 import 'package:ecomapp/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SignUpForm extends StatelessWidget {
@@ -89,9 +91,9 @@ class SignUpForm extends StatelessWidget {
           Row(
             children: [
               SizedBox(
-                child: Checkbox(value: true, onChanged: (value) {}),
                 height: 24,
                 width: 24,
+                child: Checkbox(value: true, onChanged: (value) {}),
               ),
               const SizedBox(width: ASizes.spaceBtwItems),
               Text.rich(
@@ -132,7 +134,7 @@ class SignUpForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () => Get.to(() => const VerifyEmailScreen()),
               child: const Text('Create Account'),
             ),
           ),
