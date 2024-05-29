@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
               // Divider
               DividerWithTitle(dividerText: 'Or Sign In with'),
 
-              SizedBox(height: ASizes.spaceBtwItems),
+              SizedBox(height: ASizes.spaceBtwSections),
 
               // Login using socials
               Row(
