@@ -1,5 +1,6 @@
 import 'package:ecomapp/features/auth/screens/password/forget_password.dart';
 import 'package:ecomapp/features/auth/screens/signup%20create%20acc/signup.dart';
+import 'package:ecomapp/navbar.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -60,7 +61,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => const Navbar()),
                 child: const Text('Sign In'),
               ),
             ),
