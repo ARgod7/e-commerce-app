@@ -20,6 +20,7 @@ class CustomBGScaffhold extends StatelessWidget {
             height: double.infinity,
           ),
           SafeArea(child: child),
+          Container()
         ],
       ),
     );
