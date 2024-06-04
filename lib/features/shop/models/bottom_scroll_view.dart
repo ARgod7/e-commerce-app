@@ -1,4 +1,7 @@
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecomapp/common/widgets/promobanner.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
+import 'package:ecomapp/utils/constants/image_string.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
 import 'package:ecomapp/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -25,13 +28,45 @@ class BottomScrollList extends StatelessWidget {
         ),
         height: ADeviceUtils.getScreenHeight() / 2 + 60,
         width: ADeviceUtils.getScreenWidth(context),
-        child: const SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(ASizes.defaultSpace),
+            padding: const EdgeInsets.only(top: ASizes.defaultSpace),
             child: Column(
               children: [
-                Text('List of items'),
-                Text('List of items'),
+                CarouselSlider(
+                  items: const [
+                    PromoBanner(img: AImages.promo1),
+                    PromoBanner(img: AImages.promo2),
+                    PromoBanner(img: AImages.promo3),
+                  ],
+                  options: CarouselOptions(viewportFraction: 1),
+                ),
+                Row(
+                  children: [
+                    Container(
+                      width: 20,
+                      height: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.amber,
+                          borderRadius: BorderRadius.circular(100)),
+                    ),
+                    Container(
+                      width: 20,
+                      height: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.amber,
+                          borderRadius: BorderRadius.circular(100)),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(right: ASizes.sm),
+                      width: 20,
+                      height: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.amber,
+                          borderRadius: BorderRadius.circular(100)),
+                    ),
+                  ],
+                )
               ],
             ),
           ),

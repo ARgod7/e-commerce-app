@@ -7,6 +7,10 @@ class AImages {
   static const String bg2 = 'assets/images/onBoarding/bg2.jpg';
   static const String bg3 = 'assets/images/onBoarding/bg3.jpg';
 
+  static const String promo1 = 'assets/images/onBoarding/summer.jpg';
+  static const String promo2 = 'assets/images/onBoarding/shoes.jpg';
+  static const String promo3 = 'assets/images/onBoarding/clothing.jpg';
+
   // Social logos
   static const String google =
       'assets/logos/google-logo-icon-png-transparent-background-osteopathy-16.png';
