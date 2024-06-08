@@ -1,3 +1,4 @@
+import 'package:ecomapp/common/widgets/product_card_vertical.dart';
 import 'package:ecomapp/common/widgets/promo_slider.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/constants/image_string.dart';
@@ -29,8 +30,19 @@ class BottomScrollList extends StatelessWidget {
         child: const SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.only(top: ASizes.defaultSpace),
-            child: PromoSlider(
-                banners: [AImages.promo1, AImages.promo2, AImages.promo3]),
+            child: Column(
+              children: [
+                // BANNERS
+
+                PromoSlider(
+                    banners: [AImages.promo1, AImages.promo2, AImages.promo3]),
+
+                SizedBox(height: ASizes.spaceBtwItems),
+                // TILES
+
+                ProductCardVertical(),
+              ],
+            ),
           ),
         ),
       ),

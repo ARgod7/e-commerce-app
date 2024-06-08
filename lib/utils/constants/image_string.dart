@@ -28,4 +28,6 @@ class AImages {
 
   static const String verifiedEmail =
       'assets/images/onBoarding/email verified.gif';
+
+  static const String product1 = 'assets/images/products/product3.png';
 }
