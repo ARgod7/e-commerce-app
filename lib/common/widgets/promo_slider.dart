@@ -28,13 +28,13 @@ class PromoSlider extends StatelessWidget {
         Center(
           child: Obx(
             () => Row(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 for (int i = 0; i < banners.length; i++)
                   Container(
                     width: 20,
                     height: 5,
-                    margin: const EdgeInsets.only(right: 10),
+                    margin: const EdgeInsets.symmetric(horizontal: 5),
                     decoration: BoxDecoration(
                         color: controller.carouselCurrentIndex.value == i
                             ? const Color.fromARGB(255, 255, 198, 135)

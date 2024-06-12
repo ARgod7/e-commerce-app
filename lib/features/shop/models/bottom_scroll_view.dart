@@ -27,20 +27,38 @@ class BottomScrollList extends StatelessWidget {
         ),
         height: ADeviceUtils.getScreenHeight() / 2 + 60,
         width: ADeviceUtils.getScreenWidth(context),
-        child: const SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(top: ASizes.defaultSpace),
+            padding: const EdgeInsets.only(top: ASizes.defaultSpace / 2),
             child: Column(
               children: [
                 // BANNERS
 
-                PromoSlider(
+                const PromoSlider(
                     banners: [AImages.promo1, AImages.promo2, AImages.promo3]),
 
-                SizedBox(height: ASizes.spaceBtwItems),
+                const SizedBox(height: ASizes.spaceBtwItems),
                 // TILES
 
-                ProductCardVertical(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: ASizes.defaultSpace),
+                  child: GridView.builder(
+                    itemCount: 6,
+                    shrinkWrap: true,
+                    padding: EdgeInsets.zero,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: ASizes.gridViewSpacing * 2,
+                      crossAxisSpacing: ASizes.gridViewSpacing * 2,
+                      mainAxisExtent: 250,
+                    ),
+                    itemBuilder: (context, index) =>
+                        const ProductCardVertical(),
+                  ),
+                ),
               ],
             ),
           ),
