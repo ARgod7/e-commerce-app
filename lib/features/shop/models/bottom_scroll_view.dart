@@ -1,3 +1,4 @@
+import 'package:ecomapp/common/widgets/grid_layout.dart';
 import 'package:ecomapp/common/widgets/product_card_vertical.dart';
 import 'package:ecomapp/common/widgets/promo_slider.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
@@ -43,20 +44,9 @@ class BottomScrollList extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: ASizes.defaultSpace),
-                  child: GridView.builder(
-                    itemCount: 6,
-                    shrinkWrap: true,
-                    padding: EdgeInsets.zero,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: ASizes.gridViewSpacing * 2,
-                      crossAxisSpacing: ASizes.gridViewSpacing * 2,
-                      mainAxisExtent: 250,
-                    ),
-                    itemBuilder: (context, index) =>
-                        const ProductCardVertical(),
+                  child: GridLayout(
+                    itemCount: 8,
+                    itemBuilder: (p0, p1) => const ProductCardVertical(),
                   ),
                 ),
               ],
