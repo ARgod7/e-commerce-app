@@ -8,12 +8,14 @@ class SectionHeading extends StatelessWidget {
     this.textcolor,
     this.buttonTitle = "view all",
     this.onPressed,
+    this.showactionbutton = false,
   });
 
   final String title;
   final Color? textcolor;
   final String buttonTitle;
   final void Function()? onPressed;
+  final bool showactionbutton;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,8 @@ class SectionHeading extends StatelessWidget {
                   .apply(color: textcolor),
               maxLines: 1,
               overflow: TextOverflow.ellipsis),
-          TextButton(onPressed: onPressed, child: Text(buttonTitle))
+          if (showactionbutton)
+            TextButton(onPressed: onPressed, child: Text(buttonTitle))
         ],
       ),
     );
