@@ -1,6 +1,7 @@
 import 'package:ecomapp/common/widgets/grid_layout.dart';
 import 'package:ecomapp/common/widgets/product_card_vertical.dart';
 import 'package:ecomapp/common/widgets/promo_slider.dart';
+import 'package:ecomapp/common/widgets/section_heading.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/constants/image_string.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
@@ -39,6 +40,8 @@ class BottomScrollList extends StatelessWidget {
                     banners: [AImages.promo1, AImages.promo2, AImages.promo3]),
 
                 const SizedBox(height: ASizes.spaceBtwItems),
+
+                SectionHeading(title: 'Popular Products'),
                 // TILES
 
                 Padding(
