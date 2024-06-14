@@ -87,6 +87,7 @@ class ProductCardVertical extends StatelessWidget {
                 children: [
                   const ProductTitleText(
                     title: 'Red Nike Air Shoe',
+                    maxLines: 1,
                     smallSize: true,
                   ),
                   const SizedBox(height: ASizes.spaceBtwItems / 2),
@@ -106,40 +107,41 @@ class ProductCardVertical extends StatelessWidget {
                       )
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("\$39.99",
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineMedium!
-                              .apply(fontSizeDelta: -4)),
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: AColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(ASizes.cardRadiusLg),
-                            bottomRight: Radius.circular(ASizes.cardRadiusLg),
-                          ),
-                        ),
-                        child: const SizedBox(
-                          width: ASizes.iconLg * 1.2,
-                          height: ASizes.iconLg * 1.2,
-                          child: Center(
-                            child: Icon(
-                              Iconsax.add,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  )
                 ],
               ),
             ),
+            const Spacer(),
+            Padding(
+              padding: const EdgeInsets.only(left: 6),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("\$39.99",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.headlineMedium!),
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: AColors.dark,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(ASizes.cardRadiusLg),
+                        bottomRight: Radius.circular(ASizes.cardRadiusLg),
+                      ),
+                    ),
+                    child: const SizedBox(
+                      width: ASizes.iconLg * 1.2,
+                      height: ASizes.iconLg * 1.2,
+                      child: Center(
+                        child: Icon(
+                          Iconsax.add,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

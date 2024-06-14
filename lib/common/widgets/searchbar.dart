@@ -9,15 +9,17 @@ class MySearchBar extends StatelessWidget {
   const MySearchBar({
     super.key,
     required this.text,
+    this.padding = const EdgeInsets.symmetric(horizontal: ASizes.defaultSpace),
   });
 
   final String text;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
     final dark = AHelperFunctions.isDarkMode(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: ASizes.defaultSpace),
+      padding: padding,
       child: Container(
         width: ADeviceUtils.getScreenWidth(context),
         padding: const EdgeInsets.all(ASizes.md),

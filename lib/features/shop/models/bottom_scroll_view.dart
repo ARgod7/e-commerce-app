@@ -41,7 +41,9 @@ class BottomScrollList extends StatelessWidget {
 
                 const SizedBox(height: ASizes.spaceBtwItems),
 
-                SectionHeading(title: 'Popular Products'),
+                const SectionHeading(title: 'Popular Products'),
+
+                const SizedBox(height: ASizes.spaceBtwItems),
                 // TILES
 
                 Padding(

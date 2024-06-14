@@ -9,6 +9,7 @@ class SectionHeading extends StatelessWidget {
     this.buttonTitle = "view all",
     this.onPressed,
     this.showactionbutton = false,
+    this.padding = ASizes.defaultSpace,
   });
 
   final String title;
@@ -16,11 +17,12 @@ class SectionHeading extends StatelessWidget {
   final String buttonTitle;
   final void Function()? onPressed;
   final bool showactionbutton;
+  final double padding;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: ASizes.defaultSpace),
+      padding: EdgeInsets.symmetric(horizontal: padding),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
