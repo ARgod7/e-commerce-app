@@ -3,6 +3,7 @@ import 'package:ecomapp/common/widgets/cart_counter_icon.dart';
 import 'package:ecomapp/common/widgets/searchbar.dart';
 import 'package:ecomapp/common/widgets/section_heading.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
+import 'package:ecomapp/utils/constants/image_string.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
 import 'package:ecomapp/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +56,33 @@ class StoreScreen extends StatelessWidget {
                           title: 'Featured Brands',
                           onPressed: () {},
                           showactionbutton: true,
-                        )
+                        ),
+                        const SizedBox(height: ASizes.defaultSpace),
+                        Container(
+                          padding: const EdgeInsets.all(ASizes.sm),
+                          decoration: BoxDecoration(
+                            border: Border.all(color: AColors.grey),
+                            borderRadius:
+                                BorderRadius.circular(ASizes.borderRadiusMd),
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                padding: const EdgeInsets.all(ASizes.sm),
+                                decoration: BoxDecoration(
+                                  color: dark ? AColors.black : AColors.white,
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                child: Image(
+                                  image: AssetImage(AImages.pcloth),
+                                  color: dark ? AColors.white : AColors.black,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
                       ]),
                 ),
               )
