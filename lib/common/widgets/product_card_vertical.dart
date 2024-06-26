@@ -1,3 +1,4 @@
+import 'package:ecomapp/common/widgets/brand_name_verified.dart';
 import 'package:ecomapp/common/widgets/promobanner.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/constants/image_string.dart';
@@ -80,32 +81,19 @@ class ProductCardVertical extends StatelessWidget {
             ),
 
             // desc
-            Padding(
-              padding: const EdgeInsets.only(left: ASizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: ASizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ProductTitleText(
+                  ProductTitleText(
                     title: 'Red Nike Air Shoe',
                     maxLines: 1,
                     smallSize: true,
                   ),
-                  const SizedBox(height: ASizes.spaceBtwItems / 2),
-                  Row(
-                    children: [
-                      Text(
-                        'Nike',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(width: 2),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: AColors.primary,
-                        size: ASizes.iconXs,
-                      )
-                    ],
+                  SizedBox(height: ASizes.spaceBtwItems / 2),
+                  BrandNameVerified(
+                    brand: 'Nike',
                   ),
                 ],
               ),

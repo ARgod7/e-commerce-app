@@ -1,8 +1,12 @@
 import 'package:ecomapp/common/widgets/appbar.dart';
+import 'package:ecomapp/common/widgets/brand_name_verified.dart';
 import 'package:ecomapp/common/widgets/cart_counter_icon.dart';
+import 'package:ecomapp/common/widgets/circular_image.dart';
+import 'package:ecomapp/common/widgets/grid_layout.dart';
 import 'package:ecomapp/common/widgets/searchbar.dart';
 import 'package:ecomapp/common/widgets/section_heading.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
+import 'package:ecomapp/utils/constants/enums.dart';
 import 'package:ecomapp/utils/constants/image_string.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
 import 'package:ecomapp/utils/helpers/helper_functions.dart';
@@ -23,7 +27,6 @@ class StoreScreen extends StatelessWidget {
         actions: [
           CartCounterIcon(
             count: '3',
-            iconColor: Colors.white,
             onPressed: () {},
           )
         ],
@@ -58,31 +61,52 @@ class StoreScreen extends StatelessWidget {
                           showactionbutton: true,
                         ),
                         const SizedBox(height: ASizes.defaultSpace),
-                        Container(
-                          padding: const EdgeInsets.all(ASizes.sm),
-                          decoration: BoxDecoration(
-                            border: Border.all(color: AColors.grey),
-                            borderRadius:
-                                BorderRadius.circular(ASizes.borderRadiusMd),
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 50,
+
+                        GridLayout(
+                          itemCount: 4,
+                          mainAxisExtent: 70,
+                          itemBuilder: (p0, p1) {
+                            return GestureDetector(
+                              onTap: () {},
+                              child: Container(
                                 padding: const EdgeInsets.all(ASizes.sm),
                                 decoration: BoxDecoration(
-                                  color: dark ? AColors.black : AColors.white,
-                                  borderRadius: BorderRadius.circular(100),
+                                  border: Border.all(color: AColors.grey),
+                                  borderRadius: BorderRadius.circular(
+                                      ASizes.borderRadiusMd),
                                 ),
-                                child: Image(
-                                  image: AssetImage(AImages.pcloth),
-                                  color: dark ? AColors.white : AColors.black,
+                                child: Row(
+                                  children: [
+                                    CircularImage(image: AImages.pcloth),
+                                    const SizedBox(
+                                        width: ASizes.spaceBtwItems / 2),
+                                    Expanded(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          const BrandNameVerified(
+                                            brand: "Nike",
+                                            size: TextSizes.large,
+                                          ),
+                                          Text(
+                                            '224 Products',
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .labelSmall,
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
                                 ),
-                              )
-                            ],
-                          ),
-                        ),
+                              ),
+                            );
+                          },
+                        )
                       ]),
                 ),
               )
