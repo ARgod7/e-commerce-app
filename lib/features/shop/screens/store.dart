@@ -5,6 +5,7 @@ import 'package:ecomapp/common/widgets/circular_image.dart';
 import 'package:ecomapp/common/widgets/grid_layout.dart';
 import 'package:ecomapp/common/widgets/searchbar.dart';
 import 'package:ecomapp/common/widgets/section_heading.dart';
+import 'package:ecomapp/features/shop/models/tab_bar.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/constants/enums.dart';
 import 'package:ecomapp/utils/constants/image_string.dart';
@@ -18,20 +19,22 @@ class StoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = AHelperFunctions.isDarkMode(context);
-    return Scaffold(
-      appBar: AAppBar(
-        title: Text(
-          'Store',
-          style: Theme.of(context).textTheme.headlineMedium,
+    return DefaultTabController(
+      length: 6,
+      child: Scaffold(
+        appBar: AAppBar(
+          title: Text(
+            'Store',
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          actions: [
+            CartCounterIcon(
+              count: '3',
+              onPressed: () {},
+            )
+          ],
         ),
-        actions: [
-          CartCounterIcon(
-            count: '3',
-            onPressed: () {},
-          )
-        ],
-      ),
-      body: NestedScrollView(
+        body: NestedScrollView(
           headerSliverBuilder: (_, innerBoxIsScrolled) {
             return [
               SliverAppBar(
@@ -109,10 +112,31 @@ class StoreScreen extends StatelessWidget {
                         )
                       ]),
                 ),
+                bottom: const ATabBar(
+                  tabs: [
+                    Tab(child: Text('Sports')),
+                    Tab(child: Text('Furniture')),
+                    Tab(child: Text('Electronics')),
+                    Tab(child: Text('Cloths')),
+                    Tab(child: Text('Cosmetics')),
+                    Tab(child: Text('Grocery')),
+                  ],
+                ),
               )
             ];
           },
-          body: Container()),
+          body: TabBarView(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(ASizes.defaultSpace),
+                child: Column(
+                  children: [Container()],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
