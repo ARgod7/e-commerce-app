@@ -77,7 +77,7 @@ class StoreScreen extends StatelessWidget {
                                 ),
                                 child: Row(
                                   children: [
-                                    CircularImage(image: AImages.pcloth),
+                                    const CircularImage(image: AImages.pcloth),
                                     const SizedBox(
                                         width: ASizes.spaceBtwItems / 2),
                                     Expanded(
