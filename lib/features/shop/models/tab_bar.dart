@@ -12,15 +12,18 @@ class ATabBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TabBar(
-      tabs: tabs,
-      isScrollable: true,
-      tabAlignment: TabAlignment.start,
-      indicatorColor: AColors.primary,
-      labelColor: AHelperFunctions.isDarkMode(context)
-          ? AColors.white
-          : AColors.primary,
-      unselectedLabelColor: AColors.darkGrey,
+    return Container(
+      color: AColors.black,
+      child: TabBar(
+        tabs: tabs,
+        isScrollable: true,
+        tabAlignment: TabAlignment.start,
+        indicatorColor: AColors.primary,
+        labelColor: AHelperFunctions.isDarkMode(context)
+            ? AColors.white
+            : AColors.primary,
+        unselectedLabelColor: AColors.darkGrey,
+      ),
     );
   }
 
