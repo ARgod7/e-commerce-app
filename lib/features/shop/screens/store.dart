@@ -9,6 +9,7 @@ import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
 import 'package:ecomapp/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -98,10 +99,23 @@ class StoreScreen extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                           border: Border.all(color: AColors.darkGrey),
+                          borderRadius:
+                              BorderRadius.circular(ASizes.borderRadiusLg),
                           color: Colors.transparent),
-                      child: Column(
-                        children: [BrandCard(showBorder: false)],
-                      ),
+                      child: Column(children: [
+                        //BRAND
+                        const BrandCard(showBorder: false),
+
+                        // PRODUCTS
+                        Row(
+                          children: [
+                            Container(
+                              height: 100,
+                              color: dark ? AColors.darkerGrey : AColors.light,
+                            ),
+                          ],
+                        ),
+                      ]),
                     ),
                   ],
                 ),
