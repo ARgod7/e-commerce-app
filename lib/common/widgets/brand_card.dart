@@ -29,7 +29,7 @@ class BrandCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            const CircularImage(image: AImages.pcloth),
+            const CircularImage(image: AImages.clothicon),
             const SizedBox(width: ASizes.spaceBtwItems / 2),
             Expanded(
               child: Column(

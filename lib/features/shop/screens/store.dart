@@ -6,6 +6,7 @@ import 'package:ecomapp/common/widgets/searchbar.dart';
 import 'package:ecomapp/common/widgets/section_heading.dart';
 import 'package:ecomapp/features/shop/models/tab_bar.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
+import 'package:ecomapp/utils/constants/image_string.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
 import 'package:ecomapp/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -111,7 +112,11 @@ class StoreScreen extends StatelessWidget {
                           children: [
                             Container(
                               height: 100,
+                              padding: const EdgeInsets.all(ASizes.sm),
+                              margin: const EdgeInsets.all(ASizes.sm),
                               color: dark ? AColors.darkerGrey : AColors.light,
+                              child: const Image(
+                                  image: AssetImage(AImages.darkAppLogo)),
                             ),
                           ],
                         ),
