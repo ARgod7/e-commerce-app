@@ -1,5 +1,6 @@
 import 'package:ecomapp/features/shop/screens/home.dart';
 import 'package:ecomapp/features/shop/screens/store.dart';
+import 'package:ecomapp/features/shop/screens/wishlist.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
 import 'package:ecomapp/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +48,7 @@ class NavigationController extends GetxController {
   final screens = [
     const HomeScreen(),
     const StoreScreen(),
-    Container(color: Colors.purple),
+    const WishListScreen(),
     Container(color: Colors.green),
   ];
 }

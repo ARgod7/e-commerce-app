@@ -1,14 +1,11 @@
 import 'package:ecomapp/common/widgets/appbar.dart';
-import 'package:ecomapp/common/widgets/brand_name_verified.dart';
+import 'package:ecomapp/common/widgets/brand_card.dart';
 import 'package:ecomapp/common/widgets/cart_counter_icon.dart';
-import 'package:ecomapp/common/widgets/circular_image.dart';
 import 'package:ecomapp/common/widgets/grid_layout.dart';
 import 'package:ecomapp/common/widgets/searchbar.dart';
 import 'package:ecomapp/common/widgets/section_heading.dart';
 import 'package:ecomapp/features/shop/models/tab_bar.dart';
 import 'package:ecomapp/utils/constants/colors.dart';
-import 'package:ecomapp/utils/constants/enums.dart';
-import 'package:ecomapp/utils/constants/image_string.dart';
 import 'package:ecomapp/utils/constants/sizes.dart';
 import 'package:ecomapp/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +39,7 @@ class StoreScreen extends StatelessWidget {
                 pinned: true,
                 floating: true,
                 backgroundColor: dark ? AColors.dark : AColors.white,
-                expandedHeight: 440,
+                expandedHeight: 410,
                 flexibleSpace: Padding(
                   padding: const EdgeInsets.all(ASizes.defaultSpace),
                   child: ListView(
@@ -54,7 +51,7 @@ class StoreScreen extends StatelessWidget {
                           text: 'Search',
                           padding: EdgeInsets.zero,
                         ),
-                        const SizedBox(height: ASizes.spaceBtwSections),
+                        const SizedBox(height: ASizes.spaceBtwSections / 2),
 
                         // Section
                         SectionHeading(
@@ -69,47 +66,11 @@ class StoreScreen extends StatelessWidget {
                           itemCount: 4,
                           mainAxisExtent: 70,
                           itemBuilder: (p0, p1) {
-                            return GestureDetector(
-                              onTap: () {},
-                              child: Container(
-                                padding: const EdgeInsets.all(ASizes.sm),
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: AColors.grey),
-                                  borderRadius: BorderRadius.circular(
-                                      ASizes.borderRadiusMd),
-                                ),
-                                child: Row(
-                                  children: [
-                                    const CircularImage(image: AImages.pcloth),
-                                    const SizedBox(
-                                        width: ASizes.spaceBtwItems / 2),
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          const BrandNameVerified(
-                                            brand: "Nike",
-                                            size: TextSizes.large,
-                                          ),
-                                          Text(
-                                            '224 Products',
-                                            maxLines: 1,
-                                            overflow: TextOverflow.ellipsis,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .labelSmall,
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
+                            return const BrandCard(
+                              showBorder: true,
                             );
                           },
-                        )
+                        ),
                       ]),
                 ),
                 bottom: const ATabBar(
@@ -130,7 +91,16 @@ class StoreScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(ASizes.defaultSpace),
                 child: Column(
-                  children: [Container()],
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(color: AColors.darkGrey),
+                          color: Colors.transparent),
+                      child: Column(
+                        children: [BrandCard(showBorder: false)],
+                      ),
+                    ),
+                  ],
                 ),
               )
             ],
