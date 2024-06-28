@@ -29,7 +29,8 @@ class AImages {
   static const String verifiedEmail =
       'assets/images/onBoarding/email verified.gif';
 
-  static const String clothicon = 'assets/images/onBoarding/cloth.png';
-  static const String product1 = 'assets/images/onBoarding/product3.png';
-  static const String nikecloth = 'assets/images/onBoarding/nike.png';
+  static const String clothicon = 'assets/images/products/cloth.png';
+  static const String nikecloth = 'assets/images/products/nikecloth.png';
+  static const String shoe1 = 'assets/images/products/shoe1.png';
+  static const String shoe2 = 'assets/images/products/shoe2.png';
 }

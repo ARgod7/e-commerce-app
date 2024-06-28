@@ -5,17 +5,20 @@ class PromoBanner extends StatelessWidget {
   const PromoBanner({
     super.key,
     required this.img,
-    this.ver = ASizes.defaultSpace,
-    this.hor = ASizes.defaultSpace / 2,
+    this.top = ASizes.defaultSpace,
+    this.bottom = ASizes.defaultSpace,
+    this.left = ASizes.defaultSpace / 2,
+    this.right = ASizes.defaultSpace / 2,
   });
 
   final String img;
-  final double ver, hor;
+  final double top, bottom, left, right;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: ver, horizontal: hor),
+      padding:
+          EdgeInsets.only(top: top, bottom: bottom, left: left, right: right),
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(ASizes.borderRadiusMd)),

@@ -108,17 +108,57 @@ class StoreScreen extends StatelessWidget {
                         const BrandCard(showBorder: false),
 
                         // PRODUCTS
-                        Row(
-                          children: [
-                            Container(
-                              height: 100,
-                              padding: const EdgeInsets.all(ASizes.sm),
-                              margin: const EdgeInsets.all(ASizes.sm),
-                              color: dark ? AColors.darkerGrey : AColors.light,
-                              child: const Image(
-                                  image: AssetImage(AImages.darkAppLogo)),
-                            ),
-                          ],
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  height: 100,
+                                  padding: const EdgeInsets.all(ASizes.sm / 2),
+                                  margin: const EdgeInsets.all(ASizes.sm),
+                                  decoration: BoxDecoration(
+                                      color: dark
+                                          ? AColors.darkerGrey
+                                          : AColors.light,
+                                      borderRadius: BorderRadius.circular(
+                                          ASizes.borderRadiusLg)),
+                                  child: const Image(
+                                      image: AssetImage(AImages.nikecloth)),
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  height: 100,
+                                  padding: const EdgeInsets.all(ASizes.sm / 2),
+                                  margin: const EdgeInsets.all(ASizes.sm),
+                                  decoration: BoxDecoration(
+                                      color: dark
+                                          ? AColors.darkerGrey
+                                          : AColors.light,
+                                      borderRadius: BorderRadius.circular(
+                                          ASizes.borderRadiusLg)),
+                                  child: const Image(
+                                      image: AssetImage(AImages.nikecloth)),
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  height: 100,
+                                  padding: const EdgeInsets.all(ASizes.sm / 2),
+                                  margin: const EdgeInsets.all(ASizes.sm),
+                                  decoration: BoxDecoration(
+                                      color: dark
+                                          ? AColors.darkerGrey
+                                          : AColors.light,
+                                      borderRadius: BorderRadius.circular(
+                                          ASizes.borderRadiusLg)),
+                                  child: const Image(
+                                      image: AssetImage(AImages.nikecloth)),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ]),
                     ),

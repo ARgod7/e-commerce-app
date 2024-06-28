@@ -41,8 +41,9 @@ class ProductCardVertical extends StatelessWidget {
                   const Padding(
                       padding: EdgeInsets.only(left: 0),
                       child: PromoBanner(
-                        img: AImages.product1,
-                        ver: 12,
+                        img: AImages.shoe1,
+                        top: 40,
+                        bottom: 0,
                       )),
 
                   //Sale tag
